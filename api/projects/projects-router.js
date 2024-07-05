@@ -30,6 +30,28 @@ router.get('/:id', async (req,res)=>{
 
 })
 
+router.post('/',(req,res) =>{
+    const {name,description,completed} = req.body
+
+    if(!name || !description){
+        res.status(400).json({
+            message: 'Please provide all fields'
+        })
+    }else{
+        Project.insert({name, description, completed})
+         
+        .then(proj=>{
+            res.status(200).json(proj)
+        })
+        .catch(err=>{
+            res.status(500).json({
+                message:'there was an error adding project to database'
+            })
+        })
+    }
+
+})
+
 
 
 
