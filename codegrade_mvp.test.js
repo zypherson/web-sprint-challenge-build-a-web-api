@@ -42,6 +42,7 @@ describe('server.js', () => {
   // 👉 PROJECTS
   // 👉 PROJECTS
   // 👉 PROJECTS
+  
   describe('projects endpoints', () => {
     describe('[GET] /api/projects', () => {
       test('[1] sends back all projects that exist', async () => {
